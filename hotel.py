@@ -12,7 +12,7 @@ class HotelManagementSystem:
        
        
        #======================1st img===========================
-       img1 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\hotel1.png")
+       img1 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\hotellogo1.png")
        img1 = img1.resize((1320,160),Image.Resampling.LANCZOS)
        self.photoimg1 = ImageTk.PhotoImage(img1)
        
@@ -20,7 +20,7 @@ class HotelManagementSystem:
        lblimg.place(x=230,y=0,width=1320,height=160)
        
         #======================2nd img===========================
-       img2 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\hotellogo1.png")
+       img2 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\hotellogo1.png")
        img2 = img2.resize((230,160),Image.Resampling.LANCZOS)
        self.photoimg2 = ImageTk.PhotoImage(img2)
        
@@ -59,7 +59,7 @@ class HotelManagementSystem:
        logout_btn.grid(row=4,column=0,pady=1)
        
        #=======================Rightside image=============================
-       img3 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\hotel4.png")
+       img3 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\hotel4.png")
        img3 = img3.resize((1119,480),Image.Resampling.LANCZOS)
        self.photoimg3 = ImageTk.PhotoImage(img3)
        
@@ -67,14 +67,14 @@ class HotelManagementSystem:
        lblimg.place(x=236,y=0,width=1119,height=480)
        
        #===========================side img=================================
-       img4 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\hotel5.png")
+       img4 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\hotel5.png")
        img4 = img4.resize((236,125),Image.Resampling.LANCZOS)
        self.photoimg4 = ImageTk.PhotoImage(img4)
        
        lblimg =Label(main_frame, image = self.photoimg4,bd=4,relief=RIDGE)
        lblimg.place(x=0,y=235,width=236,height=125)
        
-       img5 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\hotel6.png")
+       img5 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\hotel6.png")
        img5 = img5.resize((236,125),Image.Resampling.LANCZOS)
        self.photoimg5 = ImageTk.PhotoImage(img5)
        

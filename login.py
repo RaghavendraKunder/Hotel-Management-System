@@ -27,14 +27,14 @@ class Login_window:
         self.var_email=StringVar()
         self.var_password=StringVar()
         
-        self.bg = ImageTk.PhotoImage(file=r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\beach1.png")
+        self.bg = ImageTk.PhotoImage(file=r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\beach1.png")
         lbl_bg=Label(self.root,image=self.bg)
         lbl_bg.place(x=0,y=0,relwidth=1,relheight=1)
         
         frame=Frame(self.root,bg="black")
         frame.place(x=525,y=130,width=340,height=450)
         
-        img1=Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\login1.png")
+        img1=Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\login1.png")
         img1=img1.resize((100,100),Image.Resampling.LANCZOS)
         self.photoimage1=ImageTk.PhotoImage(img1)
         lblimg1=Label(image=self.photoimage1,bg="black",borderwidth=0)
@@ -57,13 +57,13 @@ class Login_window:
         self.txtpass.place(x=40,y=265,width=270)
         
         #icon images
-        img2=Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\admin1.png")
+        img2=Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\admin1.png")
         img2=img2.resize((30,30),Image.Resampling.LANCZOS)
         self.photoimage2=ImageTk.PhotoImage(img2)
         lblimg2=Label(frame,image=self.photoimage2,bg="black",borderwidth=0)
         lblimg2.place(x=40,y=145,width=30,height=30)
         
-        img3=Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\pass1.png")
+        img3=Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\pass1.png")
         img3=img3.resize((30,30),Image.Resampling.LANCZOS)
         self.photoimage3=ImageTk.PhotoImage(img3)
         lblimg3=Label(frame,image=self.photoimage3,bg="black",borderwidth=0)
@@ -216,12 +216,12 @@ class Register:
         self.var_c_password=StringVar()
         
         #background image
-        self.bg=ImageTk.PhotoImage(file=r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\mountain1.png")
+        self.bg=ImageTk.PhotoImage(file=r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\mountain1.png")
         bg_lbl=Label(self.root,image=self.bg)
         bg_lbl.place(x=0,y=0,relwidth=1,relheight=1) 
         
         #left image
-        self.bg1=ImageTk.PhotoImage(file=r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\left1.png")
+        self.bg1=ImageTk.PhotoImage(file=r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\left1.png")
         left_lbl=Label(self.root,image=self.bg1)
         left_lbl.place(x=90,y=100,width=332,height=445)  
         
@@ -298,7 +298,7 @@ class Register:
         
         
         #buttons
-        img1=Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\register1.png")
+        img1=Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\register1.png")
         img1=img1.resize((30,40),Image.Resampling.LANCZOS)
         self.photoimage=ImageTk.PhotoImage(img1)
         lblimg1=Label(frame,image=self.photoimage,bg="black",borderwidth=0)
@@ -307,7 +307,7 @@ class Register:
         b1.place(x=442,y=385,width=77,height=40)
         
         
-        img2=Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\login2.png")
+        img2=Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\login2.png")
         img2=img2.resize((35,35),Image.Resampling.LANCZOS)
         self.photoimage1=ImageTk.PhotoImage(img2)
         lblimg2=Label(frame,image=self.photoimage1,bg="black",borderwidth=0)
@@ -362,7 +362,7 @@ class HotelManagementSystem:
        
        
        #======================1st img===========================
-       img1 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\hotell1.png")
+       img1 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\hotell1.png")
        img1 = img1.resize((1320,160),Image.Resampling.LANCZOS)
        self.photoimg1 = ImageTk.PhotoImage(img1)
        
@@ -370,7 +370,7 @@ class HotelManagementSystem:
        lblimg.place(x=230,y=0,width=1320,height=160)
        
         #======================2nd img===========================
-       img2 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\hotellogo1.png")
+       img2 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\hotellogo1.png")
        img2 = img2.resize((230,160),Image.Resampling.LANCZOS)
        self.photoimg2 = ImageTk.PhotoImage(img2)
        
@@ -409,7 +409,7 @@ class HotelManagementSystem:
        logout_btn.grid(row=4,column=0,pady=1)
        
        #=======================Rightside image=============================
-       img3 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\hotel4.png")
+       img3 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\hotel4.png")
        img3 = img3.resize((1119,480),Image.Resampling.LANCZOS)
        self.photoimg3 = ImageTk.PhotoImage(img3)
        
@@ -417,14 +417,14 @@ class HotelManagementSystem:
        lblimg.place(x=236,y=0,width=1119,height=480)
        
        #===========================side img=================================
-       img4 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\hotel5.png")
+       img4 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\hotel5.png")
        img4 = img4.resize((236,125),Image.Resampling.LANCZOS)
        self.photoimg4 = ImageTk.PhotoImage(img4)
        
        lblimg =Label(main_frame, image = self.photoimg4,bd=4,relief=RIDGE)
        lblimg.place(x=0,y=235,width=236,height=125)
        
-       img5 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\hotel6.png")
+       img5 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\hotel6.png")
        img5 = img5.resize((236,125),Image.Resampling.LANCZOS)
        self.photoimg5 = ImageTk.PhotoImage(img5)
        

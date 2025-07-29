@@ -10,7 +10,7 @@ class dev_win:
         self.root.title("DEVELOPERS")
         self.root.geometry("1119x447+241+244")
         
-        self.bg = ImageTk.PhotoImage(file=r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\dev.png")
+        self.bg = ImageTk.PhotoImage(file=r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\dev.png")
         lbl_bg=Label(self.root,image=self.bg)
         lbl_bg.place(x=0,y=0,relwidth=1,relheight=1)
         

@@ -30,7 +30,7 @@ class Cust_win:
         lbl_title.place(x=369,y=0,width=1119,height=40)
         
          #======================logo===========================
-        img1 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\blue.jpg")
+        img1 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\blue.jpg")
         img1 = img1.resize((230,160),Image.Resampling.LANCZOS)
         self.photoimg2 = ImageTk.PhotoImage(img1)
        

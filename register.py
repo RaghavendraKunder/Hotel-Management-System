@@ -23,12 +23,12 @@ class Register:
         self.var_c_password=StringVar()
         
         #background image
-        self.bg=ImageTk.PhotoImage(file=r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\mountain1.png")
+        self.bg=ImageTk.PhotoImage(file=r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\mountain1.png")
         bg_lbl=Label(self.root,image=self.bg)
         bg_lbl.place(x=0,y=0,relwidth=1,relheight=1) 
         
         #left image
-        self.bg1=ImageTk.PhotoImage(file=r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\left1.png")
+        self.bg1=ImageTk.PhotoImage(file=r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\left1.png")
         left_lbl=Label(self.root,image=self.bg1)
         left_lbl.place(x=90,y=100,width=332,height=445)  
         
@@ -105,7 +105,7 @@ class Register:
         
         
         #buttons
-        img1=Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\register1.png")
+        img1=Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\register1.png")
         img1=img1.resize((30,40),Image.Resampling.LANCZOS)
         self.photoimage=ImageTk.PhotoImage(img1)
         lblimg1=Label(frame,image=self.photoimage,bg="black",borderwidth=0)
@@ -114,7 +114,7 @@ class Register:
         b1.place(x=442,y=385,width=77,height=40)
         
         
-        img2=Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel Management System\images\login2.png")
+        img2=Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\login2.png")
         img2=img2.resize((35,35),Image.Resampling.LANCZOS)
         self.photoimage1=ImageTk.PhotoImage(img2)
         lblimg2=Label(frame,image=self.photoimage1,bg="black",borderwidth=0)
