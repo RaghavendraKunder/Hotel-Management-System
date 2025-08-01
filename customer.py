@@ -338,18 +338,20 @@ class Cust_win:
         searchBy = Label(labelFrameRight, text="Search By", font=("times new roman", 12, "bold italic"),bg="midnightblue",fg="snow",padx=2,pady=2)
         searchBy.grid(row=0, column=0, padx=0, pady=6, sticky=W)
         
-        combo_searchBy = ttk.Combobox(labelFrameRight, font=("Comic Sans MS", 12, "bold italic"), width=20, state="readonly")
-        combo_searchBy["values"] = ("Ref Id","Name","Mother's Name","Gender","Mobile NO","Email","Country","Id Proof","Id Number","Address")
+        self.searchVar = StringVar()
+        combo_searchBy = ttk.Combobox(labelFrameRight,textvariable=self.searchVar, font=("Comic Sans MS", 12, "bold italic"), width=20, state="readonly")
+        combo_searchBy["values"] = ("Ref Id","Name","Mother's Name","Mobile no.","Email","Id Number")
         combo_searchBy.current(0)
         combo_searchBy.grid(row=0, column=1, padx=0, pady=6, sticky=W) 
         
-        searchField = ttk.Entry(labelFrameRight, font=("Comic Sans MS", 12, "italic"), width=22)   
+        self.srchField = StringVar()
+        searchField = ttk.Entry(labelFrameRight,textvariable=self.srchField, font=("Comic Sans MS", 12, "italic"), width=22)   
         searchField.grid(row=0, column=2, padx=4, pady=6, sticky=W)
         
-        btnSearch = Button(labelFrameRight, text="Update", font=("times new roman", 12, "bold italic"), bg="midnightblue", fg="white", width=8)
+        btnSearch = Button(labelFrameRight, text="Search",command=self.searchData, font=("times new roman", 12, "bold italic"), bg="midnightblue", fg="white", width=8)
         btnSearch.grid(row=0, column=3, padx=2, pady=2)
         
-        btnShowall = Button(labelFrameRight, text="Delete", font=("times new roman", 12, "bold italic"), bg="midnightblue", fg="white", width=8)
+        btnShowall = Button(labelFrameRight, text="Search All",command=self.fetch_data, font=("times new roman", 12, "bold italic"), bg="midnightblue", fg="white", width=8)
         btnShowall.grid(row=0, column=4, padx=2, pady=2)
         
         #========================Show Data Table=========================
@@ -491,16 +493,38 @@ class Cust_win:
         
     def reset(self):
             self.cust_name.set("")
-            self.cust_ref.set("")
-            self.cust_mother.set("")
-            self.cust_gender.set("")    
+            self.cust_mother.set("")   
             self.cust_mobile.set("")
             self.cust_email.set("")
-            self.cust_country.set("")
-            self.cust_idproof.set("")
             self.cust_idnum.set("")
             self.cust_address.set("")  
-            messagebox.showinfo("Reset", "All fields have been reset", parent=self.root)          
+            x = random.randint(1000, 9999)
+            self.cust_ref.set(str(x))
+            messagebox.showinfo("Reset", "All fields have been reset", parent=self.root)   
+            
+    def searchData(self):
+        conn = mysql.connector.connect(host="localhost", username="root", password="Sujat@1972", database="management")
+        my_cursor = conn.cursor()
+        column = self.searchVar.get()
+        value = self.srchField.get()
+        column_map = {
+            "Ref Id": "ref",
+            "Name": "name",
+            "Mother's Name": "mother",
+            "Mobile NO": "mobile",
+            "Email": "email",
+            "Id Number": "idnum"
+        }
+        db_column = column_map.get(column, "ref")
+        query = f"SELECT * FROM customer WHERE {db_column} LIKE %s"
+        my_cursor.execute(query, ('%' + value + '%',))
+        rows = my_cursor.fetchall()
+        if len(rows) != 0:
+            self.Cust_Details_table.delete(*self.Cust_Details_table.get_children())
+            for i in rows:
+                self.Cust_Details_table.insert("", END, values=i)
+            conn.commit()
+        conn.close()              
       
             
 if __name__=="__main__":
