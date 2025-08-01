@@ -4,6 +4,7 @@ from PIL import Image,ImageTk  #pip install pillow
 from tkinter import messagebox
 import mysql.connector
 from developers import dev_win
+from customer import Cust_win
 
 def main():
     win=Tk()
@@ -393,7 +394,7 @@ class HotelManagementSystem:
        btn_frame = Frame(main_frame,bd=4,relief=RIDGE)
        btn_frame.place(x=1,y=45,width=235,height=190)
        
-       cust_btn=Button(btn_frame,text="Customer", width=20,font=("times new roman", 14, "bold"),bg="#473C8B",fg="#87CEEb",bd=0,cursor="hand2",relief=RIDGE,activebackground="#6A5ACD",activeforeground="black")
+       cust_btn=Button(btn_frame,text="Customer", command=self.customer_details, width=20,font=("times new roman", 14, "bold"),bg="#473C8B",fg="#87CEEb",bd=0,cursor="hand2",relief=RIDGE,activebackground="#6A5ACD",activeforeground="black")
        cust_btn.grid(row=0,column=0,pady=1)    
        
        room_btn=Button(btn_frame,text="Room", width=20,font=("times new roman", 14, "bold"),bg="#473C8B",fg="#87CEEb",bd=0,cursor="hand2",relief=RIDGE,activebackground="#6A5ACD",activeforeground="black")
@@ -436,7 +437,11 @@ class HotelManagementSystem:
         
     def dev_details(self):
         self.new_window=Toplevel(self.root)  
-        self.app=dev_win(self.new_window)        
+        self.app=dev_win(self.new_window)    
+    
+    def customer_details(self):
+        self.new_window=Toplevel(self.root)
+        self.app=Cust_win(self.new_window)        
 
 
 if __name__ =="__main__":
