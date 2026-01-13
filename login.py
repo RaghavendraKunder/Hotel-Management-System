@@ -106,6 +106,7 @@ class Login_window:
                    if open_main>0:
                        self.new_window=Toplevel(self.root)
                        self.app=HotelManagementSystem(self.new_window)
+                       self.root.withdraw()  
                    else:
                        if not open_main:
                            return

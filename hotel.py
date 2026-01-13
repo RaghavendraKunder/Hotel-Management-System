@@ -1,8 +1,11 @@
 from tkinter import *
+from tkinter import messagebox
 from PIL import Image,ImageTk  #pip install pillow
 from customtkinter import *
 from developers import dev_win
 from customer import Cust_win
+from room import room_win
+from details import details_win
 
 class HotelManagementSystem:
     def __init__(self, root):
@@ -12,7 +15,7 @@ class HotelManagementSystem:
        
        
        #======================1st img===========================
-       img1 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\hotellogo1.png")
+       img1 = Image.open(r"C:\Users\admin\OneDrive\Desktop\Hotel-Management-System\images\hotell1.png")
        img1 = img1.resize((1320,160),Image.Resampling.LANCZOS)
        self.photoimg1 = ImageTk.PhotoImage(img1)
        
@@ -46,16 +49,16 @@ class HotelManagementSystem:
        cust_btn=Button(btn_frame,text="Customer", command=self.Cust_win, width=20,font=("times new roman", 14, "bold"),bg="#473C8B",fg="#87CEEb",bd=0,cursor="hand2",relief=RIDGE,activebackground="#6A5ACD",activeforeground="black")
        cust_btn.grid(row=0,column=0,pady=1)    
        
-       room_btn=Button(btn_frame,text="Room", width=20,font=("times new roman", 14, "bold"),bg="#473C8B",fg="#87CEEb",bd=0,cursor="hand2",relief=RIDGE,activebackground="#6A5ACD",activeforeground="black")
+       room_btn=Button(btn_frame,text="Room", command=self.room_win, width=20,font=("times new roman", 14, "bold"),bg="#473C8B",fg="#87CEEb",bd=0,cursor="hand2",relief=RIDGE,activebackground="#6A5ACD",activeforeground="black")
        room_btn.grid(row=1,column=0,pady=1) 
        
-       details_btn=Button(btn_frame,text="Details", width=20,font=("times new roman", 14, "bold"),bg="#473C8B",fg="#87CEEb",bd=0,cursor="hand2",relief=RIDGE,activebackground="#6A5ACD",activeforeground="black")
+       details_btn=Button(btn_frame,text="Details",command=self.details_win, width=20,font=("times new roman", 14, "bold"),bg="#473C8B",fg="#87CEEb",bd=0,cursor="hand2",relief=RIDGE,activebackground="#6A5ACD",activeforeground="black")
        details_btn.grid(row=2,column=0,pady=1) 
        
        report_btn=Button(btn_frame,text="Developers",command=self.dev_details, width=20,font=("times new roman", 14, "bold"),bg="#473C8B",fg="#87CEEb",bd=0,cursor="hand2",relief=RIDGE,activebackground="#6A5ACD",activeforeground="black")
        report_btn.grid(row=3,column=0,pady=1)
        
-       logout_btn=Button(btn_frame,text="Logout", width=20,font=("times new roman", 14, "bold"),bg="#473C8B",fg="#87CEEb",bd=0,cursor="hand2",relief=RIDGE,activebackground="#6A5ACD",activeforeground="black")
+       logout_btn=Button(btn_frame,text="Logout",command=self.logout, width=20,font=("times new roman", 14, "bold"),bg="#473C8B",fg="#87CEEb",bd=0,cursor="hand2",relief=RIDGE,activebackground="#6A5ACD",activeforeground="black")
        logout_btn.grid(row=4,column=0,pady=1)
        
        #=======================Rightside image=============================
@@ -90,6 +93,24 @@ class HotelManagementSystem:
     def Cust_win(self):
         self.new_window = Toplevel(self.root)
         self.app = Cust_win(self.new_window)
+        
+    def room_win(self):
+        self.new_window = Toplevel(self.root)
+        self.app = room_win(self.new_window) 
+        
+    def details_win(self):
+        self.new_window = Toplevel(self.root)
+        self.app = details_win(self.new_window) 
+        
+    def logout(self):
+        # Close current window and open the login page
+        try:
+            self.root.destroy()
+            # Import here to avoid circular imports at module load
+            from login import main as login_main
+            login_main()
+        except Exception as e:
+            messagebox.showerror("Error", f"Unable to open login page: {e}")            
        
            
 if __name__=="__main__":       

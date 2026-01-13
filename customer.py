@@ -510,9 +510,9 @@ class Cust_win:
         column_map = {
             "Ref Id": "ref",
             "Name": "name",
-            "Mother's Name": "mother",
-            "Mobile NO": "mobile",
-            "Email": "email",
+            "Checkout's Name": "Checkout",
+            "availableroom NO": "availableroom",
+            "noofdays": "noofdays",
             "Id Number": "idnum"
         }
         db_column = column_map.get(column, "ref")
